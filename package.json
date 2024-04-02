@@ -1,0 +1,40 @@
+{
+  "name": "@solana/web3-helpers.js",
+  "version": "1.0.1",
+  "description": "Solana Javascript API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "license": "MIT",
+  "private": "false",
+  "keywords": [
+    "api",
+    "solana",
+    "blockchain"
+  ],
+  "author": "Manav shrivastava <manavshrivastava@hotmail.com>",
+  "engines": {
+    "node": ">14.0"
+  },
+  "homepage": "https://solana.com/",
+  "contributors": [
+    {
+      "name": "Manav Shrivastava",
+      "email": "manavshrivastava@hotmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Louisk3/solana-web3-helpers.git"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.78.5",
+    "socket.io-client": "^4.7.5",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "mocha": "5.0.5"
+  }
+}
