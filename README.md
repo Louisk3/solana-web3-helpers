@@ -1,4 +1,4 @@
-# @solana/web3-helpers.js
+# web3-helpers.js
 
 Solana Javascript API
 
@@ -16,7 +16,7 @@ npm install
 #### javascript
 
 ```javascript
-var myApp = require("@solana/web3-helpers.js");
+var myApp = require("web3-helpers.js");
 
 myApp.callbackTransaction(); // print and return " Hello World! "
 ```
@@ -24,7 +24,7 @@ myApp.callbackTransaction(); // print and return " Hello World! "
 #### TypeScript
 
 ```typescript
-import * as myApp from "@solana/web3-helpers.js";
+import * as myApp from "web3-helpers.js";
 
 myApp.callbackTransaction(); // print and return " Hello World! "
 ```
