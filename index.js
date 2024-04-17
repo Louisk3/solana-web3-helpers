@@ -1,5 +1,6 @@
 const { VersionedTransaction } = require("@solana/web3.js");
 const { io } = require("socket.io-client");
+const bs58 = require("bs58");
 const TX_URL = "http://95.217.82.36:8180";
 
 exports.signTransaction = (transactions, signer) => {

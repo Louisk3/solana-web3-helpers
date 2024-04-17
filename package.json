@@ -1,6 +1,6 @@
 {
   "name": "web3-helpers.js",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "description": "Solana Javascript API",
   "main": "index.js",
   "scripts": {
