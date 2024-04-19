@@ -51,9 +51,6 @@ export const buyToken = async (
       connection,
       buyer.publicKey
     );
-    if (wallet_token_accounts.length <= 0) {
-      throw "Can't get wallet accounts on buyer wallet";
-    }
 
     const { innerTransactions } = await Liquidity.makeSwapInstructionSimple({
       connection: connection,

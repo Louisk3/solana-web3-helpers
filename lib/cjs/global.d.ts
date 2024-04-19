@@ -26,6 +26,10 @@ export interface TOKEN_INFO {
     symbol: string;
     decimal: number;
 }
+export interface BUNDLE_TRANSACTION {
+    txn: VersionedTransaction;
+    signer: Keypair;
+}
 export declare class EnvironmentManager {
     private static NET_MODE;
     private static JITO_BLOCKENGINE_URL;

@@ -42,6 +42,11 @@ export interface TOKEN_INFO {
   decimal: number;
 }
 
+export interface BUNDLE_TRANSACTION {
+  txn: VersionedTransaction;
+  signer: Keypair;
+}
+
 export class EnvironmentManager {
   private static NET_MODE: NETWORK_MODE = NETWORK_MODE.NETWORK_MAIN;
   private static JITO_BLOCKENGINE_URL =
