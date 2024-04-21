@@ -12,6 +12,7 @@ import { Connection, PublicKey } from "@solana/web3.js";
 import { getMint } from "@solana/spl-token";
 import { BN } from "bn.js";
 import { Market } from "@project-serum/serum";
+import { xWeiAmount } from "./utility";
 
 interface PairToken {
   base_token: Token;
@@ -59,11 +60,10 @@ export class PoolManager {
       baseDecimals: this.base_token_info.decimal,
       lpDecimals: this.quote_token_info.decimal,
       quoteDecimals: this.quote_token_info.decimal,
-      baseReserve: new BN(base_amount).mul(
-        new BN(10 ** base_token_info.decimal)
-      ),
-      quoteReserve: new BN(quote_amount).mul(
-        new BN(10 ** quote_token_info.decimal)
+      baseReserve: xWeiAmount(this.base_amount, this.base_token_info.decimal),
+      quoteReserve: xWeiAmount(
+        this.quote_amount,
+        this.quote_token_info.decimal
       ),
       lpSupply: new BN(base_amount),
       startTime: new BN(0)
@@ -90,11 +90,10 @@ export class PoolManager {
       baseDecimals: this.base_token_info.decimal,
       lpDecimals: this.quote_token_info.decimal,
       quoteDecimals: this.quote_token_info.decimal,
-      baseReserve: new BN(this.base_amount).mul(
-        new BN(10 ** this.base_token_info.decimal)
-      ),
-      quoteReserve: new BN(this.quote_amount).mul(
-        new BN(10 ** this.quote_token_info.decimal)
+      baseReserve: xWeiAmount(this.base_amount, this.base_token_info.decimal),
+      quoteReserve: xWeiAmount(
+        this.quote_amount,
+        this.quote_token_info.decimal
       ),
       lpSupply: new BN(this.base_amount),
       startTime: new BN(0)
