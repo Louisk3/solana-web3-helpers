@@ -9,7 +9,8 @@ import {
   LiquidityPoolInfo,
   LiquidityPoolKeys,
   SPL_ACCOUNT_LAYOUT,
-  Token
+  Token,
+  findProgramAddress
 } from "@raydium-io/raydium-sdk";
 import { MARKET_STATE_LAYOUT_V3 } from "@project-serum/serum";
 
@@ -110,5 +111,17 @@ export const getAvailablePoolKeyAndPoolInfo = async (
     poolInfo: poolInfo
   };
 };
+
+export function getATAAddress(
+  programId: PublicKey,
+  owner: PublicKey,
+  mint: PublicKey
+) {
+  const { publicKey, nonce } = findProgramAddress(
+    [owner.toBuffer(), programId.toBuffer(), mint.toBuffer()],
+    new PublicKey("ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL")
+  );
+  return { publicKey, nonce };
+}
 
 export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

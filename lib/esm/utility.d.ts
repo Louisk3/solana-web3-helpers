@@ -26,4 +26,8 @@ export declare const getAvailablePoolKeyAndPoolInfo: (connection: Connection, ba
     poolKeys: any;
     poolInfo: any;
 }>;
+export declare function getATAAddress(programId: PublicKey, owner: PublicKey, mint: PublicKey): {
+    publicKey: PublicKey;
+    nonce: number;
+};
 export declare const sleep: (ms: number) => Promise<unknown>;

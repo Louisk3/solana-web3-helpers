@@ -23,7 +23,8 @@ export const createAndSendBundle = async (
 
   const _tipAccount = (await searcher.getTipAccounts())[0];
   const tipAccount = new PublicKey(_tipAccount);
-  const recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
+  const recentBlockhash = (await connection.getLatestBlockhash("finalized"))
+    .blockhash;
   const bundleTransactions: VersionedTransaction[] = [];
 
   for (let i = 0; i < transactions.length; i++) {
