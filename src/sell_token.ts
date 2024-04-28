@@ -43,8 +43,8 @@ export const sellToken = async (
     const base_token_amount = new TokenAmount(base_token, base_amount, false);
     const quote_token_amount = new TokenAmount(
       quote_token,
-      quote_amount,
-      false
+      quote_amount === 0 ? 1 : quote_amount,
+      quote_amount === 0 ? true : false
     );
 
     const wallet_token_accounts = await getWalletAccounts(
