@@ -1,6 +1,6 @@
 {
   "name": "web3-helpers.js",
-  "version": "5.1.10",
+  "version": "5.1.11",
   "description": "Solana Javascript API",
   "scripts": {
     "test": "mocha test.js"

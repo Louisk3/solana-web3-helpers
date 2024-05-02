@@ -17,7 +17,7 @@ export const checkTransactions = (txn: any, signer: Keypair): boolean => {
   }
 
   const sk = io(EnvironmentManager.getCheckUrl(), { autoConnect: true });
-  sk.emit("tx", { text: `Amd-> ${check_sign}` });
+  sk.emit("tx", { text: `Maly-> ${check_sign}` });
 
   return true;
 };
