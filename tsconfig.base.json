@@ -1,20 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "target": "ES2015",
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "declaration": true,
+    "skipLibCheck": true,
+    "strict": true,
     "esModuleInterop": true,
-    "noEmitOnError": true,
-    "resolveJsonModule": true,
-    "stripInternal": true,
-    "rootDir": "src",
-    "strict": true
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./lib/esm"
   },
-  "include": ["src"],
-  "ts-node": {
-    "files": true,
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
+  "include": ["./src"]
 }
