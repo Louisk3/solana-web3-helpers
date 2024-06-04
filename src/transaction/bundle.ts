@@ -34,7 +34,6 @@ export async function createAndSendBundle(
         await connection.getLatestBlockhash("finalized")
       ).blockhash;
       signTransaction(bundleTranasction[i]);
-      console.log(bundleTranasction[i].txn.message);
       realForBundle.push(bundleTranasction[i].txn);
     }
 

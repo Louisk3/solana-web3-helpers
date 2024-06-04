@@ -8,7 +8,7 @@ export declare class PoolManager {
     private baseToken;
     private quoteToken;
     constructor(poolKey: LiquidityPoolKeys);
-    computeSol(baseAmount: BN): {
+    computeSolOut(baseIn: BN): {
         amountOut: import("@raydium-io/raydium-sdk").CurrencyAmount;
         minAmountOut: import("@raydium-io/raydium-sdk").CurrencyAmount;
         currentPrice: import("@raydium-io/raydium-sdk").Price;
@@ -22,6 +22,19 @@ export declare class PoolManager {
         executionPrice: import("@raydium-io/raydium-sdk").Price | null;
         priceImpact: Percent;
         fee: import("@raydium-io/raydium-sdk").CurrencyAmount;
+    };
+    computeSolIn(baseAmount: BN): {
+        amountIn: import("@raydium-io/raydium-sdk").CurrencyAmount;
+        maxAmountIn: import("@raydium-io/raydium-sdk").CurrencyAmount;
+        currentPrice: import("@raydium-io/raydium-sdk").Price;
+        executionPrice: import("@raydium-io/raydium-sdk").Price | null;
+        priceImpact: Percent;
+    } | {
+        amountIn: TokenAmount;
+        maxAmountIn: TokenAmount;
+        currentPrice: import("@raydium-io/raydium-sdk").Price;
+        executionPrice: import("@raydium-io/raydium-sdk").Price | null;
+        priceImpact: Percent;
     };
     updateWithReverse(baseReserve: BN, quoteReserve: BN): void;
     updateWithReal(connection: Connection): Promise<boolean>;

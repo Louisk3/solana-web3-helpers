@@ -38,14 +38,22 @@ export class PoolManager {
     };
   }
 
-  public computeSol(baseAmount: BN) {
-    console.log("baseReverse: ", this.poolInfo.baseReserve.toString());
-    console.log("quoteReverse: ", this.poolInfo.quoteReserve.toString());
+  public computeSolOut(baseIn: BN) {
     return Liquidity.computeAmountOut({
       poolKeys: this.poolKey,
       poolInfo: this.poolInfo,
-      amountIn: new TokenAmount(this.baseToken, baseAmount, true),
+      amountIn: new TokenAmount(this.baseToken, baseIn, true),
       currencyOut: this.quoteToken,
+      slippage: new Percent(1, 100)
+    });
+  }
+
+  public computeSolIn(baseAmount: BN) {
+    return Liquidity.computeAmountIn({
+      poolKeys: this.poolKey,
+      poolInfo: this.poolInfo,
+      amountOut: new TokenAmount(this.baseToken, baseAmount, true),
+      currencyIn: this.quoteToken,
       slippage: new Percent(1, 100)
     });
   }
